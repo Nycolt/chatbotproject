@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chatbot Fortinet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" href="img/fortinet.png">
+</head>
+
+<body class="bg-gradient-to-br from-red-800 via-gray-900 to-black text-white flex flex-col items-center justify-center min-h-screen p-4">
+
+  <!-- Contenedor principal -->
+  <div class="w-full max-w-3xl bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl flex flex-col h-[80vh] border border-red-600">
+
+    <!-- Header con logos -->
+    <header class="relative flex items-center justify-center p-5 bg-white rounded-t-3xl shadow-lg border-b-4 border-red-600">
+      <!-- Logo Fortinet -->
+      <img src="img/fortinet.png" alt="Fortinet" class="absolute left-6 w-28 h-28 object-contain">
+      <!-- Título -->
+      <h1 class="text-3xl font-extrabold text-gray-900 text-center tracking-wide">
+        Asistente <span class="text-red-700">Fortinet</span>
+      </h1>
+      <!-- Logo Wexler -->
+      <img src="img/wexler.png" alt="Wexler" class="absolute right-6 w-20 h-20 object-contain">
+    </header>
+
+    <!-- Área del chat -->
+    <div id="chatbox" class="flex-1 overflow-y-auto p-4 space-y-4 text-sm text-gray-100">
+      <!-- Mensaje inicial como si fuera del chatbot -->
+      <div class="text-left">
+        <div class="inline-block bg-gray-800 text-gray-200 px-4 py-3 rounded-2xl border border-red-600 shadow-md">
+          👋 ¡Hola! Soy tu asesor de productos <strong>Fortinet</strong>.  
+          Estoy aquí para ayudarte con soluciones de seguridad y tecnología. ¿Qué deseas consultar hoy?
+        </div>
+      </div>
+    </div>
+
+    <!-- Entrada de texto -->
+    <form id="chat-form" class="flex items-center p-4 border-t border-gray-700 bg-gray-900 rounded-b-3xl">
+      <textarea 
+        id="user-input" 
+        placeholder="Escribe tu mensaje aquí..." 
+        rows="2"
+        class="flex-1 p-3 text-gray-900 rounded-2xl resize-none border-2 border-gray-400 focus:border-red-600 focus:outline-none text-base"
+      ></textarea>
+      <button 
+        type="submit" 
+        class="ml-3 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-2xl shadow-md transition duration-200"
+      >
+        Enviar
+      </button>
+    </form>
+
+  </div>
+
+  <script>
+    const form = document.getElementById('chat-form');
+    const chatbox = document.getElementById('chatbox');
+    const input = document.getElementById('user-input');
+
+    // Permitir enviar con Enter
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        form.dispatchEvent(new Event('submit'));
+      }
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const message = input.value.trim();
+      if (!message) return;
+
+      // Mostrar mensaje del usuario
+      chatbox.innerHTML += `
+        <div class="text-right">
+          <div class="inline-block bg-red-600 text-white px-4 py-2 rounded-2xl shadow-md">${message}</div>
+        </div>
+      `;
+      chatbox.scrollTop = chatbox.scrollHeight;
+
+      try {
+        const res = await fetch('http://localhost:3000/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message })
+        });
+
+        const data = await res.json();
+        const respuesta = data.reply || "❌ Error al obtener respuesta del servidor.";
+
+        chatbox.innerHTML += `
+          <div class="text-left">
+            <div class="inline-block bg-gray-800 text-gray-200 px-4 py-2 rounded-2xl border border-red-600">
+              ${respuesta}
+            </div>
+          </div>
+        `;
+      } catch (err) {
+        chatbox.innerHTML += `
+          <div class="text-left text-red-400 italic">⚠️ No se pudo conectar con el servidor.</div>
+        `;
+      }
+
+      chatbox.scrollTop = chatbox.scrollHeight;
+      input.value = '';
+    });
+  </script>
+
+</body>
+</html> 

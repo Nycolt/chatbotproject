@@ -1,0 +1,142 @@
+[
+  {
+    "necesidad": "Monitoreo y correlación de eventos de seguridad",
+    "tecnologia": "SIEM",
+    "producto": "FortiSIEM (FSM-3600G, FSM-500G, licencias EPS y agentes, IOC, HA)"
+  },
+  {
+    "necesidad": "Análisis y almacenamiento de logs",
+    "tecnologia": "Log Management / Forensic",
+    "producto": "FortiAnalyzer (FAZ-3000F, FAZ-2000F, FAZ-VM, licencias GB/día, AI, HA)"
+  },
+  {
+    "necesidad": "Firewall de nueva generación",
+    "tecnologia": "NGFW",
+    "producto": "FortiGate (FG-1800F, FG-1000F, FG-600F, FG-400F, FG-VM)"
+  },
+  {
+    "necesidad": "Protección avanzada frente a amenazas persistentes",
+    "tecnologia": "ATP / Sandbox",
+    "producto": "FortiSandbox (FSA-200F, FSA-1000F, FSA-VM, licencias de análisis)"
+  },
+  {
+    "necesidad": "Autenticación multifactor y control de acceso seguro",
+    "tecnologia": "MFA / IAM",
+    "producto": "FortiAuthenticator (FAC-2000E, FAC-VM, integración con tokens FortiToken 200/300)"
+  },
+  {
+    "necesidad": "Protección contra malware, phishing y spam en correo electrónico",
+    "tecnologia": "Email Security / SEG",
+    "producto": "FortiMail (FML-2000F, FML-1000F, FML-VM, licencias usuarios/día)"
+  },
+  {
+    "necesidad": "Protección web y filtrado de contenido",
+    "tecnologia": "Web Filtering / Secure Web Gateway",
+    "producto": "FortiProxy (FPX-400E, FPX-200F, FPX-VM)"
+  },
+  {
+    "necesidad": "Acceso remoto seguro para empleados y proveedores",
+    "tecnologia": "VPN SSL / IPSec",
+    "producto": "FortiGate con licencias VPN, integración FortiClient EMS"
+  },
+  {
+    "necesidad": "Gestión centralizada de dispositivos y políticas",
+    "tecnologia": "Centralized Management",
+    "producto": "FortiManager (FMG-2000F, FMG-VM, HA, control multiempresa)"
+  },
+  {
+    "necesidad": "Protección de endpoints con detección y respuesta avanzada",
+    "tecnologia": "EDR / Endpoint Security",
+    "producto": "FortiEDR (licencias por agente, consola en nube o on-premise)"
+  },
+  {
+    "necesidad": "Visibilidad y control del tráfico OT e IoT",
+    "tecnologia": "OT Security / Network Visibility",
+    "producto": "FortiNAC (FNAC-VM, FNAC-500D, licencias de dispositivos controlados)"
+  },
+  {
+    "necesidad": "Implementación de red LAN segura y gestionada",
+    "tecnologia": "Secure Switching / NAC",
+    "producto": "FortiSwitch (FS-424E, FS-148F, FS-108E)"
+  },
+  {
+    "necesidad": "Cobertura inalámbrica segura en sedes y oficinas",
+    "tecnologia": "Wireless Security / Access Point",
+    "producto": "FortiAP (FAP-431F, FAP-234F, FAP-U231F)"
+  },
+  {
+    "necesidad": "Segmentación y microsegmentación en red",
+    "tecnologia": "Network Segmentation / Zero Trust",
+    "producto": "FortiGate + FortiNAC + FortiAuthenticator integrados"
+  },
+  {
+    "necesidad": "Protección perimetral y prevención de intrusiones",
+    "tecnologia": "IPS / Threat Prevention",
+    "producto": "FortiGate con motor IPS + actualizaciones FortiGuard"
+  },
+  {
+    "necesidad": "Protección frente a ataques DDoS",
+    "tecnologia": "DDoS Protection",
+    "producto": "FortiDDoS (FD-1600F, FD-400B, FD-VM)"
+  },
+  {
+    "necesidad": "Inspección de tráfico cifrado SSL/TLS",
+    "tecnologia": "SSL Inspection",
+    "producto": "FortiGate con procesadores NP7 o CP9"
+  },
+  {
+    "necesidad": "Visibilidad y análisis de tráfico en nube híbrida",
+    "tecnologia": "Cloud Security / Monitoring",
+    "producto": "FortiCWP o FortiGate-VM en AWS, Azure o GCP"
+  },
+  {
+    "necesidad": "Conectividad segura entre sedes remotas",
+    "tecnologia": "SD-WAN / WAN Edge",
+    "producto": "FortiGate (series 100F–600F) con FortiManager para SD-WAN"
+  },
+  {
+    "necesidad": "Protección y monitoreo de aplicaciones web",
+    "tecnologia": "WAF / Application Security",
+    "producto": "FortiWeb (FWB-400E, FWB-VM, licencias tráfico HTTP/S)"
+  },
+  {
+    "necesidad": "Automatización y orquestación de respuestas ante incidentes",
+    "tecnologia": "SOAR",
+    "producto": "FortiSOAR (FSR-5000F, FSR-VM, integraciones FortiSIEM y FortiGate)"
+  },
+  {
+    "necesidad": "Protección del tráfico DNS frente a amenazas",
+    "tecnologia": "DNS Security",
+    "producto": "FortiDNS (integrado en FortiGate o FortiGuard DNS Filter)"
+  },
+  {
+    "necesidad": "Protección en entornos de nube pública o híbrida",
+    "tecnologia": "Cloud Native Security",
+    "producto": "FortiGate-VM y FortiCNP integrados con servicios nativos de nube"
+  },
+  {
+    "necesidad": "Control y auditoría de accesos privilegiados",
+    "tecnologia": "PAM / Privileged Access Management",
+    "producto": "FortiPAM (FPM-VM, gestión de sesiones, grabación y control)"
+  },
+  {
+    "necesidad": "Protección de entornos OT industriales y SCADA",
+    "tecnologia": "OT Security / ICS",
+    "producto": "FortiGate Rugged (R30E, R40F) con FortiAnalyzer y FortiManager"
+  },
+  {
+    "necesidad": "Gestión de vulnerabilidades y evaluación continua",
+    "tecnologia": "Vulnerability Management",
+    "producto": "FortiVuln (integrado con FortiGuard Labs)"
+  },
+  {
+    "necesidad": "Seguridad impulsada por IA con correlación avanzada",
+    "tecnologia": "AI-Powered Security",
+    "producto": "FortiAI (FAI-VM, FAI-1000F)"
+  },
+  {
+    "necesidad": "Protección de dispositivos móviles y BYOD",
+    "tecnologia": "Mobile Security",
+    "producto": "FortiClient EMS (licencias móviles, control MDM)"
+  }
+]

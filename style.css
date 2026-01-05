@@ -1,0 +1,147 @@
+/* 🎨 Paleta Fortinet + Wexler */
+:root {
+  --fortinet-red: #e60012;
+  --fortinet-gray: #222;
+  --wexler-blue: #0073e6;
+  --light-gray: #f5f5f5;
+  --white: #fff;
+  --shadow: rgba(0, 0, 0, 0.2);
+  --radius: 15px;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, var(--fortinet-red), var(--wexler-blue));
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 💬 Contenedor principal */
+.chat-container {
+  width: 95%;
+  max-width: 600px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 20px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease;
+}
+
+/* 🔺 Encabezado */
+.chat-container h2 {
+  background: var(--fortinet-gray);
+  color: var(--white);
+  text-align: center;
+  margin: 0;
+  padding: 15px 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Logos */
+.chat-container h2 img {
+  height: 28px;
+  vertical-align: middle;
+}
+
+/* 📩 Zona de mensajes */
+#chat-box {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: var(--light-gray);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* 💬 Mensajes */
+.message {
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.message.user {
+  background: var(--wexler-blue);
+  color: var(--white);
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.message.bot {
+  background: #fff;
+  border: 1px solid #ddd;
+  color: #333;
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+/* ✍️ Área de entrada */
+.input-area {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background: var(--white);
+  border-top: 1px solid #ddd;
+}
+
+#user-input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  resize: none;
+  height: 50px; /* 👈 más alto para escribir cómodamente */
+}
+
+#user-input:focus {
+  border-color: var(--fortinet-red);
+}
+
+#send-btn {
+  background: var(--fortinet-red);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  margin-left: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#send-btn:hover {
+  background: #b8000f;
+  transform: scale(1.05);
+}
+
+/* ✨ Animación de entrada */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 📱 Responsividad */
+@media (max-width: 500px) {
+  .chat-container {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  #user-input {
+    height: 60px;
+  }
+}
